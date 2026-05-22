@@ -7,16 +7,19 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
+ 
     public function index()
     {
         $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
     }
 
+
     public function create()
-{
-    return view('tasks.create');
-}
+    {
+        return view('tasks.create');
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -46,11 +49,9 @@ class TaskController extends Controller
 
         return redirect('/tasks')->with('success', 'Task marked complete!');
     }
-
     public function show(int $id)
     {
         $task = Task::findOrFail($id);
         return view('tasks.show', compact('task'));
     }
-    
 }
