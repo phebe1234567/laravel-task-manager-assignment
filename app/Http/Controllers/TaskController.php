@@ -23,7 +23,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|min:3|max:255|unique:tasks',
+            'title' => 'required|min:3|max:255',
             'description' => 'nullable|max:500',
             'scheduled_date' => 'nullable|date',
             'start_time' => 'nullable',
