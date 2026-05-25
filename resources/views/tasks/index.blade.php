@@ -11,7 +11,7 @@
 
     @foreach($tasks as $task)
         <div>
-
+           
             @if($task->is_completed)
                 <h3><s>{{ $task->title }}</s></h3>
             @else
@@ -24,7 +24,7 @@
                 Status:
                 {{ $task->is_completed ? 'Complete' : 'Incomplete' }}
             </p>
-
+             <a href="/tasks/{{ $task->id }}"><button type="button">View Task</button></a>
             @if(!$task->is_completed)
                 <form action="/tasks/{{$task->id}}/complete" method="POST">
                     @csrf

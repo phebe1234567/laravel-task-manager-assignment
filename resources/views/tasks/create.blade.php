@@ -28,7 +28,7 @@
    <div>
     <label>Project 2</label>
     <textarea name="description">{{ old('description') }}</textarea>
-
+     
     @error('description')
         <p style="color:black;">{{ $message }}</p>
     @enderror

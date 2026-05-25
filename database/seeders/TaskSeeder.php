@@ -17,6 +17,7 @@ class TaskSeeder extends Seeder
            'title' => 'Task 2',
             'description' => 'This is the description for Task 2.',
             'is_completed' => true
+            
         ]);
         Task::create([
            'title' => 'Task 3',
